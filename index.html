@@ -3,120 +3,108 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gerador Oficial de Descontos Shopee</title>
+<title>RMStore | Gerador de Link Afiliado</title>
 
 <style>
-body{
-    font-family: Arial, sans-serif;
-    background:#f2f2f2;
-    margin:0;
-    text-align:center;
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #111;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-.topo{
-    background:#ff5a00;
-    color:white;
-    padding:40px 20px;
+.container {
+  background: #1c1c1c;
+  padding: 40px 25px;
+  border-radius: 12px;
+  width: 95%;
+  max-width: 420px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(255, 102, 0, 0.3);
 }
 
-.alerta{
-    background:white;
-    color:#ff5a00;
-    padding:10px 20px;
-    border-radius:25px;
-    display:inline-block;
-    margin-top:15px;
-    font-weight:bold;
+.logo {
+  font-size: 26px;
+  font-weight: bold;
+  color: #ff6600;
+  margin-bottom: 10px;
 }
 
-.caixa{
-    background:white;
-    margin:-30px auto 20px;
-    padding:30px;
-    width:90%;
-    max-width:420px;
-    border-radius:15px;
-    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+.sub {
+  font-size: 14px;
+  margin-bottom: 25px;
+  color: #ccc;
 }
 
-input{
-    width:100%;
-    padding:12px;
-    margin:15px 0;
-    border-radius:8px;
-    border:1px solid #ccc;
+input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  margin-bottom: 15px;
+  font-size: 14px;
 }
 
-button{
-    background:#ff5a00;
-    color:white;
-    border:none;
-    padding:15px;
-    width:100%;
-    border-radius:10px;
-    font-size:16px;
-    font-weight:bold;
-    cursor:pointer;
-    transition:0.3s;
+button {
+  width: 100%;
+  padding: 14px;
+  background: #ff6600;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-button:hover{
-    opacity:0.9;
+button:hover {
+  background: #ff8533;
 }
 
-.info{
-    font-size:14px;
-    margin-top:10px;
-}
-
-.rodape{
-    font-size:12px;
-    color:#777;
-    margin-top:20px;
+.footer {
+  margin-top: 20px;
+  font-size: 12px;
+  color: #777;
 }
 </style>
 </head>
 
 <body>
 
-<div class="topo">
-    <h2>🔥 Gerador de Descontos Shopee</h2>
-    <p>Cupons disponíveis por tempo limitado</p>
+<div class="container">
+  <div class="logo">🚀 RMStore</div>
+  <div class="sub">Cole o link do produto da Shopee abaixo para gerar seu acesso.</div>
 
-    <div class="alerta">
-        👥 <span id="contador">132</span> pessoas ativando desconto agora
-    </div>
-</div>
+  <input type="text" id="linkProduto" placeholder="Cole aqui o link do produto">
 
-<div class="caixa">
-    <h3>Ative seu desconto agora</h3>
-    <p>Cole o link do produto da Shopee abaixo:</p>
+  <button onclick="gerarLink()">🔥 GERAR LINK</button>
 
-    <input type="text" placeholder="Cole aqui o link do produto da Shopee">
-
-    <button onclick="redirecionar()">💰 GERAR LINK COM DESCONTO</button>
-
-    <div class="info">
-        O desconto disponível será aplicado automaticamente no carrinho.
-    </div>
-
-    <div class="rodape">
-        Página independente de afiliado. Não é site oficial da Shopee.
-    </div>
+  <div class="footer">
+    Página de afiliado independente.
+  </div>
 </div>
 
 <script>
-function redirecionar(){
-    window.location.href = "https://collshp.com/roberto.ms105?view=storefront";
-}
+function gerarLink() {
 
-// contador automático simulando pessoas online
-setInterval(function(){
-    var numero = document.getElementById("contador");
-    var atual = parseInt(numero.innerText);
-    var variacao = Math.floor(Math.random() * 3) - 1;
-    numero.innerText = atual + variacao;
-}, 4000);
+  var linkOriginal = document.getElementById("linkProduto").value;
+
+  if(linkOriginal === "") {
+    alert("Cole o link do produto primeiro.");
+    return;
+  }
+
+  // ====== COLOQUE AQUI SEU LINK BASE DE AFILIADO ======
+  var linkAfiliadoBase = "https://collshp.com/roberto.ms105?view=storefront";
+
+  // Redireciona sempre para seu link afiliado
+  window.location.href = linkAfiliadoBase;
+}
 </script>
 
 </body>
