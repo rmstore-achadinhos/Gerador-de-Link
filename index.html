@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RMStore | Gerador de Link Afiliado</title>
+<title>RMStore | Gerador de Link</title>
 
 <style>
 body {
@@ -34,19 +34,12 @@ body {
   margin-bottom: 10px;
 }
 
-.sub {
-  font-size: 14px;
-  margin-bottom: 25px;
-  color: #ccc;
-}
-
 input {
   width: 100%;
   padding: 12px;
   border-radius: 8px;
   border: none;
   margin-bottom: 15px;
-  font-size: 14px;
 }
 
 button {
@@ -59,7 +52,6 @@ button {
   font-weight: bold;
   color: #fff;
   cursor: pointer;
-  transition: 0.3s;
 }
 
 button:hover {
@@ -78,11 +70,11 @@ button:hover {
 
 <div class="container">
   <div class="logo">🚀 RMStore</div>
-  <div class="sub">Cole o link do produto da Shopee abaixo para gerar seu acesso.</div>
+  <p>Cole o link do produto abaixo:</p>
 
-  <input type="text" id="linkProduto" placeholder="Cole aqui o link do produto">
+  <input type="text" placeholder="Cole aqui o link da Shopee">
 
-  <button onclick="gerarLink()">🔥 GERAR LINK</button>
+  <button onclick="redirecionar()">🔥 GERAR LINK</button>
 
   <div class="footer">
     Página de afiliado independente.
@@ -90,20 +82,8 @@ button:hover {
 </div>
 
 <script>
-function gerarLink() {
-
-  var linkOriginal = document.getElementById("linkProduto").value;
-
-  if(linkOriginal === "") {
-    alert("Cole o link do produto primeiro.");
-    return;
-  }
-
-  // ====== COLOQUE AQUI SEU LINK BASE DE AFILIADO ======
-  var linkAfiliadoBase = "https://collshp.com/roberto.ms105?view=storefront";
-
-  // Redireciona sempre para seu link afiliado
-  window.location.href = linkAfiliadoBase;
+function redirecionar() {
+  window.location.href = "https://collshp.com/roberto.ms105?view=storefront";
 }
 </script>
 
